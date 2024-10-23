@@ -468,7 +468,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 20px 0 20px;
   position: relative;
 }
-.timeline:before {
+/* .timeline:before {
   top: 0;
   bottom: 0;
   position: absolute;
@@ -477,7 +477,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-color: #d4d4d4;
   left: 50%;
   margin-left: 0px;
-}
+} */
 @media screen and (max-width: 480px) {
   .timeline:before {
     margin-left: -64px;
@@ -487,25 +487,27 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 20px;
   position: relative;
 }
-.timeline > li:before, .timeline > li:after {
+/* .timeline > li:before, .timeline > li:after {
   content: " ";
   display: table;
-}
+} */
 .timeline > li:after {
   clear: both;
 }
 .timeline > li > .timeline-panel {
-  width: 40%;
-  float: left;
-  border: 1px solid #d4d4d4;
-  padding: 30px;
+  width: 80%;
+  /* float: left; */
+  /* border: 1px solid #d4d4d4; */
+  padding-top: 30px;
+  margin: 0 10% 20px;
   position: relative;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  text-align: center;
 }
-.timeline > li > .timeline-panel:before {
+/* .timeline > li > .timeline-panel:before {
   position: absolute;
   top: 80px;
   right: -15px;
@@ -515,7 +517,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-right: 0 solid #ccc;
   border-bottom: 15px solid transparent;
   content: " ";
-}
+} */
 .timeline > li > .timeline-panel:after {
   position: absolute;
   top: 81px;
@@ -529,7 +531,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 480px) {
   .timeline > li > .timeline-panel {
-    width: 75% !important;
+    /* width: 75% !important; */
   }
   .timeline > li > .timeline-panel:before {
     top: 30px;
@@ -585,6 +587,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .timeline-title {
   margin-top: 0;
+  font-family: "Great Vibes", Arial, serif;
+  border-bottom: 2px solid #A27132;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .date {
@@ -598,6 +604,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .timeline-body > p,
 .timeline-body > ul {
   margin-bottom: 0;
+  font-family: "Poppins", Arial, serif;
+  font-size: 14px;
 }
 
 .timeline-body > p + p {
@@ -605,9 +613,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 @media (max-width: 992px) {
-  ul.timeline:before {
+  /* ul.timeline:before {
     left: 90px;
-  }
+  } */
 
   ul.timeline > li > .timeline-panel {
     width: calc(100% - 200px);
@@ -622,7 +630,8 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 
   ul.timeline > li > .timeline-panel {
-    float: right;
+    /* float: right; */
+    width: 80%;
   }
 
   ul.timeline > li > .timeline-panel:before {
@@ -849,6 +858,37 @@ form label {
   padding: 0;
   color: white;
 }
+.fh5co-cover .overlay {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  top: 40%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+}
+#fh5co-header .overlay{
+  height: 70%;
+  background-position:center;
+  background-size: contain;
+  width: 100%;
+}
+#fh5co-header .display-tc{
+  height: 70%;
+  position: absolute;
+  top: 52%;
+  left: 0%;
+  right: 0%;
+}
+@media screen and (max-width: 480px){
+  #fh5co-header .overlay{
+    height: 68%;
+    background-position:center;
+    background-size: cover;
+    width: 100%;
+  }
+}
+
 #fh5co-header .display-tc h1,
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
@@ -1100,7 +1140,7 @@ form label {
   height: 200px;
   margin-bottom: 10px;
 }
-.couple-half .groom img, .couple-half .bride img {
+.couple-half .groom .grooms, .couple-half .bride .brides {
   width: 150px;
   height: 180px;
   -webkit-border-radius: 50%;
@@ -1116,7 +1156,7 @@ form label {
     width: 100%;
     /* height: 140px; */
   }
-  .couple-half .groom img, .couple-half .bride img {
+  .couple-half .groom .grooms, .couple-half .bride .brides {
     /* width: 100px;
     height: 125px; */
     margin: 0 auto;
@@ -2053,12 +2093,33 @@ form label {
 }
 
 /* animasi gambar */
+.moving-image-groom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -20px;
+  left: 330px;
+  height: 160px;
+  z-index: 10;
+}
+
+.moving-image-bride {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -20px;
+  right: 330px;
+  height: 160px;
+  z-index: 10;
+}
+
 .moving-image-top-left {
   display: flex;
   flex-direction: column;
   position: absolute;
   /* top: -20px; */
   left: 50px;
+  height: 180px;
   z-index: -1;
 }
 
@@ -2067,14 +2128,20 @@ form label {
   position: absolute;
   /* top: -20px; */
   right: 50px;
-  z-index: -1;
+  z-index: 100;
 }
 
 .moving-image-r {
-  width: 150px;
+  /* width: 150px; */
   animation: rotateImage 2s ease-in-out infinite alternate;
   opacity: 0.8;
   margin-top: -100px;
+}
+.moving-image-b {
+  /* width: 150px; */
+  animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite;
+  opacity: 0.8;
+  /* margin-top: -100px; */
 }
 
 @media screen and (max-width: 500px) {
@@ -2132,13 +2199,39 @@ form label {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .moving-image-groom {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    z-index: 10;
+  }
+  
+  .moving-image-bride {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 385px;
+    right: 20%;
+    z-index: 10;
+  }
+  .moving-image-b {
+    /* width: 150px; */
+    height: 170px;
+    animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite;
+    opacity: 0.8;
+    /* margin-top: -100px; */
+  }
+}
 /* animasi rotate */
 @keyframes rotateImage {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
   }
 }
 /* animasi fadein */
@@ -2148,6 +2241,15 @@ form label {
   }
   to {
       opacity: 1;
+  }
+}
+
+@keyframes blinkImage {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 /* komentar, ucapan */
