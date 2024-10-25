@@ -182,6 +182,21 @@
 	
 	};
 
+	var menuToggle = function() {
+
+		$(window).scroll(function(){
+
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$('.menu-toggle').addClass('active');
+			} else {
+				$('.menu-toggle').removeClass('active');
+			}
+
+		});
+	
+	};
+
 
 	// Loading page
 	var loaderPage = function() {
@@ -223,6 +238,7 @@
 		dropdown();
 		testimonialCarousel();
 		goToTop();
+		menuToggle()
 		loaderPage();
 		counter();
 		counterWayPoint();
