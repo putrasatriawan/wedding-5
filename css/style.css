@@ -995,26 +995,26 @@ form label {
 /* #fh5co-header{
   background-position: center center;
 } */
-#fh5co-header{
+#fh5co-header {
   background-position: 50% 48%;
 }
-@media screen and (max-width: 480px){
-  #fh5co-header{
+@media screen and (max-width: 480px) {
+  #fh5co-header {
     background-position: 50% 180%;
   }
 }
-@media screen and (max-width: 444px){
-  #fh5co-header{
+@media screen and (max-width: 444px) {
+  #fh5co-header {
     background-position: 50% 300%;
   }
 }
-@media screen and (max-width: 431px){
-  #fh5co-header{
+@media screen and (max-width: 431px) {
+  #fh5co-header {
     background-position: 50% 400%;
   }
 }
-@media screen and (max-width: 425px){
-  #fh5co-header{
+@media screen and (max-width: 425px) {
+  #fh5co-header {
     background-position: 50% 600%;
   }
 }
@@ -2280,7 +2280,7 @@ form label {
 .splash-content {
   background: linear-gradient(
     to top,
-    rgba(28, 37, 54, 1) 50%,
+    rgba(28, 37, 54, 1) 70%,
     rgba(28, 37, 54, 0)
   );
   padding: 20px;
@@ -2295,7 +2295,7 @@ form label {
 
 .splash-content h1 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 40px;
   opacity: 0;
   animation: fadeInText 2s 1s forwards;
@@ -2305,7 +2305,7 @@ form label {
 
 .splash-content h2 {
   font-size: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   opacity: 0;
   animation: fadeInText 2s 1s forwards;
   font-family: "Poppins", Arial, serif;
@@ -2316,6 +2316,7 @@ form label {
 .splash-content button {
   padding: 10px 20px;
   font-size: 1.2rem;
+  margin-bottom: 70px;
   cursor: pointer;
 }
 
@@ -2673,7 +2674,7 @@ form label {
   visibility: hidden;
 }
 
-.menu-toggle.active{
+.menu-toggle.active {
   opacity: 1;
   visibility: visible;
 }
