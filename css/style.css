@@ -526,6 +526,32 @@ figure {
   display: block;
   color: rgba(255, 255, 255, 0.8);
 }
+#fh5co-event .event-wrap {
+  overflow: hidden;
+}
+#fh5co-event .event-wrap span{
+  padding: 0 40px; 
+}
+@media screen and (max-width: 480px) {
+  #fh5co-event .event-wrap span{
+    font-size: 10px;
+    padding: 0 30px;
+  }
+  #fh5co-event .event-wrap .moving-rose-story-right{
+    height: 200px;
+  }
+  #fh5co-event .event-wrap .moving-leaf-story-right{
+    height: 180px;
+  }
+  #fh5co-event .event-wrap .moving-rose-story-left{
+    height: 200px;
+    top:40%
+  }
+  #fh5co-event .event-wrap .moving-leaf-story-left{
+    height: 200px;
+    top:2%
+  }
+}
 #fh5co-gift .event-wrap p,
 #fh5co-gift .event-wrap span {
   color: #daa162;
@@ -2284,7 +2310,7 @@ form label {
     rgba(28, 37, 54, 0)
   );
   padding: 20px;
-  padding-top: 200px;
+  padding-top: 100px;
   border-radius: 10px 10px 0 0;
   text-align: center;
   width: 100%;
@@ -2295,7 +2321,7 @@ form label {
 
 .splash-content h1 {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   font-size: 40px;
   opacity: 0;
   animation: fadeInText 2s 1s forwards;
@@ -2305,7 +2331,7 @@ form label {
 
 .splash-content h2 {
   font-size: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   opacity: 0;
   animation: fadeInText 2s 1s forwards;
   font-family: "Poppins", Arial, serif;
@@ -2316,7 +2342,7 @@ form label {
 .splash-content button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   cursor: pointer;
 }
 
@@ -2379,6 +2405,73 @@ form label {
 }
 
 /* animasi gambar */
+#splash-screen .splash-content .moving-splash-left{
+  position: absolute;
+  top: 60%;
+  bottom: 0%;
+  left: 5%;
+  z-index:10;
+}
+#splash-screen .splash-content .moving-splash-left .rose-left{
+  position: absolute;
+  bottom: -5%;
+  transform: rotate(-45deg);
+}
+#splash-screen .splash-content .moving-splash-left .wheat-left{
+  position: absolute;
+  bottom: 27%;
+  left: -25px;
+  transform: rotate(-10deg);
+}
+#splash-screen .splash-content .moving-splash-left .wheat-left-down{
+  position: absolute;
+  bottom: -20%;
+  left: 80px;
+  transform: rotate(70deg);
+}
+#splash-screen .splash-content .moving-splash-left .mini-wheat{
+  position: absolute;
+  bottom: 15%;
+  left: 44px;
+  transform: rotate(100deg);
+}
+#splash-screen .splash-content .moving-splash-left .kuncup1{
+  position: absolute;
+  top: 22%;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+#splash-screen .splash-content .moving-splash-left .kuncup2{
+  position: absolute;
+  bottom: 27%;
+  left: 10px;
+  transform: rotate(30deg);
+}
+#splash-screen .splash-content .moving-splash-left .kuncup3{
+  position: absolute;
+  bottom: 0%;
+  left: 60px;
+  transform: rotate(20deg);
+}
+#splash-screen .splash-content .moving-splash-left .kuncup4{
+  position: absolute;
+  bottom: -10%;
+  left: 150px;
+  transform: rotate(70deg);
+}
+#splash-screen .splash-content .moving-splash-left .wheat-left img,
+#splash-screen .splash-content .moving-splash-left .wheat-left-down img{
+  width: 40px;
+  height: 100px; 
+}
+#splash-screen .splash-content .moving-splash-left .mini-wheat img,
+#splash-screen .splash-content .moving-splash-left .kuncup1 img,
+#splash-screen .splash-content .moving-splash-left .kuncup2 img,
+#splash-screen .splash-content .moving-splash-left .kuncup3 img,
+#splash-screen .splash-content .moving-splash-left .kuncup4 img{
+  width: 25px;
+  height: 50px;
+}
 .moving-image-groom {
   display: flex;
   flex-direction: column;
@@ -2406,6 +2499,21 @@ form label {
   right: -165px;
   height: 250px;
   z-index: 10;
+}
+
+.moving-rose-story-left {
+  position: absolute;
+  bottom: 22%;
+  left: -1%;
+  height: 250px;
+  z-index: -1;
+}
+.moving-leaf-story-left {
+  position: absolute;
+  bottom: 32%;
+  left: -4%;
+  height: 250px;
+  z-index: -1;
 }
 
 .moving-image-bride {
@@ -2438,6 +2546,22 @@ form label {
   z-index: 10;
 }
 
+.moving-rose-story-right {
+  position: absolute;
+  bottom: -10%;
+  right: -4%;
+  height: 250px;
+  z-index: -1;
+  transform: rotate(10deg);
+}
+.moving-leaf-story-right {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  height: 250px;
+  z-index: -1;
+}
+
 .moving-image-top-left {
   display: flex;
   flex-direction: column;
@@ -2458,13 +2582,27 @@ form label {
 
 .moving-image-r {
   /* width: 150px; */
-  animation: rotateImage 2s ease-in-out infinite alternate;
+  animation: rotateImage5 2s ease-in-out infinite alternate;
   opacity: 0.8;
   margin-top: -100px;
 }
 .moving-image-b {
   /* width: 150px; */
-  animation: rotateImage 2s ease-in-out infinite alternate;
+  animation: rotateImage30 2s ease-in-out infinite alternate;
+  /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
+  opacity: 0.8;
+  /* margin-top: -100px; */
+}
+.moving-image-c {
+  /* width: 150px; */
+  animation: rotateImage10 3s ease-in-out infinite alternate;
+  /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
+  opacity: 0.8;
+  /* margin-top: -100px; */
+}
+.moving-image-d {
+  /* width: 150px; */
+  animation: rotateImage15 1s ease-in-out infinite alternate;
   /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
   opacity: 0.8;
   /* margin-top: -100px; */
@@ -2488,7 +2626,7 @@ form label {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .moving-image-r {
     width: 75px;
     margin-top: -50px;
@@ -2589,13 +2727,60 @@ form label {
   }
   .moving-image-b {
     /* width: 150px; */
-    animation: rotateImage 2s ease-in-out infinite alternate;
+    animation: rotateImage30 2s ease-in-out infinite alternate;
+    opacity: 0.8;
+    /* margin-top: -100px; */
+  }
+
+  .moving-image-r {
+    /* width: 150px; */
+    animation: rotateImage5 2s ease-in-out infinite alternate;
     opacity: 0.8;
     /* margin-top: -100px; */
   }
 }
 /* animasi rotate */
-@keyframes rotateImage {
+@keyframes rotateImage30 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes rotateImage25 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+@keyframes rotateImage20 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes rotateImage15 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes rotateImage10 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes rotateImage5 {
   0% {
     transform: rotate(0deg);
   }
