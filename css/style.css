@@ -241,6 +241,7 @@ figure {
 #fh5co-counter,
 #fh5co-event,
 #fh5co-gift,
+#fh5co-end,
 .fh5co-bg {
   background-size: cover;
   background-position: top center;
@@ -377,6 +378,11 @@ figure {
   height: 1000px;
   float: left;
 }
+#fh5co-end {
+  height: 100%;
+  padding: 100px 2%;
+  float: left;
+}
 #fh5co-counter .display-t,
 #fh5co-counter .display-tc,
 #fh5co-event .display-t,
@@ -409,6 +415,34 @@ figure {
   color: #5b4447;
   font-size: 14px;
   padding: 0 5%;
+}
+#fh5co-end .fh5co-heading p{
+  color: #000;
+  font-size: 14px;
+  padding: 20px 5%;
+  padding-top: 50px;
+}
+#fh5co-end .fh5co-heading h2{
+  font-family: "Great Vibes", Arial, serif;
+  color: #000;
+  font-size: 35px;
+  padding: 0 5%;
+}
+#fh5co-end .fh5co-heading .end-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+@media screen and (max-width: 480px) {
+  #fh5co-end .fh5co-heading .end-image img {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  }
 }
 #fh5co-couple .fh5co-heading h3 {
   font-size: 14px;
@@ -947,6 +981,7 @@ figure {
 .fh5co-social-icons {
   margin: 0;
   padding: 0;
+  padding-bottom: 10px;
 }
 .fh5co-social-icons li {
   margin: 0;
@@ -962,12 +997,12 @@ figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #1c2536;
+  color: white;
   padding-left: 10px;
   padding-right: 10px;
 }
 .fh5co-social-icons li a i {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .fh5co-contact-info ul {
@@ -1036,12 +1071,12 @@ form label {
 }
 @media screen and (max-width: 431px) {
   #fh5co-header {
-    background-position: 50% 400%;
+    background-position: 50% 600%;
   }
 }
 @media screen and (max-width: 425px) {
   #fh5co-header {
-    background-position: 50% 600%;
+    background-position: 50% 900%;
   }
 }
 
@@ -1065,7 +1100,7 @@ form label {
   z-index: 0;
   position: absolute;
   bottom: 0;
-  top: 40%;
+  top: 30%;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0);
@@ -1073,7 +1108,8 @@ form label {
 #fh5co-header .overlay {
   height: 80%;
   background-position: center;
-  background-size: contain;
+  background: url("../images/upsect2.png");
+  background-size: cover;
   width: 100%;
 }
 #fh5co-header .display-tc {
@@ -1085,10 +1121,20 @@ form label {
 }
 @media screen and (max-width: 480px) {
   #fh5co-header .overlay {
-    height: 80%;
+    height: 70%;
+    background: url("../images/upsect.png");
     background-position: center;
     background-size: cover;
     width: 100%;
+  }
+  .fh5co-cover .overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 45%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
   }
 }
 
@@ -1761,6 +1807,21 @@ form label {
     text-align: center;
   }
 }
+#fh5co-footer{
+  background: #1c2536;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#fh5co-footer h2{
+  color: white;
+  font-size: 16px;
+}
+#fh5co-footer p{
+  font-size: 12px;
+}
 #fh5co-footer .copyright .block {
   display: block;
 }
@@ -2294,7 +2355,7 @@ form label {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../images/img_bg_1.jpg") no-repeat center 30%;
+  background: url("../images/img_bg_3.jpg") no-repeat center 30%;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -2306,8 +2367,10 @@ form label {
 .splash-content {
   background: linear-gradient(
     to top,
-    rgba(28, 37, 54, 1) 70%,
-    rgba(28, 37, 54, 0)
+    rgba(28, 37, 54, 1) 0%,          /* Solid color at the bottom */
+    rgba(28, 37, 54, 0.8) 30%,       /* Slightly transparent a bit above the bottom */
+    rgba(28, 37, 54, 0.4) 60%,       /* More transparent approaching the middle */
+    rgba(28, 37, 54, 0) 100%
   );
   padding: 20px;
   padding-top: 100px;
@@ -2384,20 +2447,20 @@ form label {
 }
 
 #toggle-music {
-  background: none;
-  border: 2px solid #0285ff;
+  background: #d6c7a2;
+  /* border: 2px solid #0285ff; */
   border-radius: 50%;
   padding: 1px 6px 0px 6px;
   cursor: pointer;
   outline: none;
-  color: #0285ff;
+  color: #1c2536;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 #toggle-music:hover {
   background-color: rgba(2, 133, 255, 0.1);
-  color: #0056e0;
-  border-color: #0056e0;
+  color: #1c2536;
+  /* border-color: #0056e0; */
 }
 
 #attendance option {
@@ -2443,7 +2506,7 @@ form label {
 }
 #splash-screen .splash-content .moving-splash-left .kuncup2{
   position: absolute;
-  bottom: 27%;
+  bottom: 25%;
   left: 10px;
   transform: rotate(30deg);
 }
@@ -2639,20 +2702,23 @@ form label {
     width: 100%;
     height: 100vh;
     background: url("../images/img_bg_1.jpg") no-repeat center top;
-    background-size: 100%;
+    background-size: cover;
     /* background-size: cover; */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     z-index: 1000;
+    overflow: hidden;
   }
 
   .splash-content {
     background: linear-gradient(
       to top,
-      rgba(28, 37, 54, 1) 50%,
-      rgba(28, 37, 54, 0)
+      rgba(28, 37, 54, 1) 0%,          /* Solid color at the bottom */
+    rgba(28, 37, 54, 0.8) 30%,       /* Slightly transparent a bit above the bottom */
+    rgba(28, 37, 54, 0.4) 60%,       /* More transparent approaching the middle */
+    rgba(28, 37, 54, 0) 100% 
     );
     padding: 20px;
     padding-top: 350px;
