@@ -83,39 +83,71 @@
 
 
 	var contentWayPoint = function() {
-		var i = 0;
-		$('.animate-box').waypoint( function( direction ) {
+		const animateBoxes = document.querySelectorAll('.animate-box');
+		const cooldownTime = 300;
 
-			if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
-				
-				i++;
+		const lastAnimationTimeMap = new Map();
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				const el = entry.target;
+				const effect = el.getAttribute('data-animate-effect');
+				const currentTime = Date.now();
 
-					$('body .animate-box.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn animated-fast');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft animated-fast');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight animated-fast');
-							} else {
-								el.addClass('fadeInUp animated-fast');
-							}
+				if (!lastAnimationTimeMap.has(el)) {
+					lastAnimationTimeMap.set(el, 0);
+				}
+				const lastAnimationTime = lastAnimationTimeMap.get(el);
 
-							el.removeClass('item-animate');
-						},  k * 200, 'easeInOutExpo' );
-					});
+				const hasFadeIn = el.classList.contains('fadeIn') || 
+								el.classList.contains('fadeInLeft') || 
+								el.classList.contains('fadeInRight') || 
+								el.classList.contains('fadeInUp');
+
+				const hasFadeOut = el.classList.contains('fadeOut') || 
+								el.classList.contains('fadeOutLeft') || 
+								el.classList.contains('fadeOutRight') || 
+								el.classList.contains('fadeOutUp');
+
+				if (entry.isIntersecting && !hasFadeIn) {
+					el.classList.remove('fadeOutLeft', 'fadeOutRight', 'fadeOutUp', 'fadeOut');
 					
-				}, 100);
-				
-			}
+					if (effect === 'fadeIn') {
+						el.classList.add('fadeIn', 'animated-fast');
+					} else if (effect === 'fadeInLeft') {
+						el.classList.add('fadeInLeft', 'animated-fast');
+					} else if (effect === 'fadeInRight') {
+						el.classList.add('fadeInRight', 'animated-fast');
+					} else {
+						el.classList.add('fadeInUp', 'animated-fast');
+					}
 
-		} , { offset: '85%' } );
+					lastAnimationTimeMap.set(el, Date.now());
+				} else if (!entry.isIntersecting && !hasFadeOut && entry.boundingClientRect.top > 0) {
+
+					if (currentTime - lastAnimationTime >= cooldownTime) {
+						el.classList.remove('fadeIn', 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'animated-fast');
+						
+						if (effect === 'fadeIn') {
+							el.classList.add('fadeOut');
+						} else if (effect === 'fadeInLeft') {
+							el.classList.add('fadeOutLeft');
+						} else if (effect === 'fadeInRight') {
+							el.classList.add('fadeOutRight');
+						} else {
+							el.classList.add('fadeOutUp');
+						}
+
+						lastAnimationTimeMap.set(el, Date.now());
+					}
+				}
+			});
+		}, {
+			threshold: 0.25,
+			rootMargin: "0px 0px -150px 0px"
+		});
+
+		animateBoxes.forEach(box => observer.observe(box));
 	};
 
 
@@ -183,6 +215,16 @@
 	};
 
 	var menuToggle = function() {
+		$('.event-toggle a').click(function(event) {
+			event.preventDefault();
+			
+			var target = $(this).attr("href");
+			var targetOffset = $(target).offset().top;
+	
+			$('html, body').animate({
+				scrollTop: targetOffset
+			}, 600);
+		});
 
 		$(window).scroll(function(){
 

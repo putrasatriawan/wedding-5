@@ -893,7 +893,7 @@ figure {
 }
 @media screen and (max-width: 480px) {
   #fh5co-gallery-list li {
-    margin-left: 0;
+    margin-left: 1%;
   }
 }
 #fh5co-gallery-list li a {
@@ -903,7 +903,7 @@ figure {
   width: 100%;
   display: block;
 }
-#fh5co-gallery-list li a:before {
+/* #fh5co-gallery-list li a:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -919,10 +919,10 @@ figure {
   -ms-border-radius: 7px;
   border-radius: 7px;
   background: rgba(0, 0, 0, 0.2);
-}
-#fh5co-gallery-list li a:hover:before {
+} */
+/* #fh5co-gallery-list li a:hover:before {
   background: rgba(0, 0, 0, 0.5);
-}
+} */
 #fh5co-gallery-list li a .case-studies-summary {
   width: auto;
   bottom: 2em;
@@ -959,11 +959,18 @@ figure {
 @media screen and (max-width: 768px) {
   #fh5co-gallery-list li.one-third {
     width: 49%;
+    min-height: 300px;
+  }
+  #fh5co-gallery-list li a {
+    min-height: 300px;
   }
 }
 @media screen and (max-width: 480px) {
   #fh5co-gallery-list li.one-third {
-    width: 100%;
+    min-height: 200px;
+  }
+  #fh5co-gallery-list li a {
+    min-height: 200px;
   }
 }
 
@@ -2289,7 +2296,32 @@ form label {
 
 .js .animate-box {
   opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
+
+.animated-fast {
+  opacity: 1;
+}
+
+.fadeIn { animation: fadeIn 2s forwards; }
+.fadeInLeft { animation: fadeInLeft 2s forwards; }
+.fadeInRight { animation: fadeInRight 2s forwards; }
+.fadeInUp { animation: fadeInUp 2s forwards; }
+
+.fadeOut { animation: fadeOut 1s forwards; }
+.fadeOutLeft { animation: fadeOutLeft 1s forwards; }
+.fadeOutRight { animation: fadeOutRight 1s forwards; }
+.fadeOutUp { animation: fadeOutUp 1s forwards; }
+
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOutLeft { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-20px); } }
+@keyframes fadeOutRight { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(20px); } }
+@keyframes fadeOutUp { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .event-inner a {
   background: #1c2536;
@@ -2458,7 +2490,7 @@ form label {
 }
 
 #toggle-music:hover {
-  background-color: rgba(2, 133, 255, 0.1);
+  background-color: white;
   color: #1c2536;
   /* border-color: #0056e0; */
 }
@@ -2475,10 +2507,37 @@ form label {
   left: 5%;
   z-index:10;
 }
+#splash-screen .splash-content .moving-splash-right{
+  position: absolute;
+  top: 60%;
+  bottom: 0%;
+  right: 10%;
+  z-index:10;
+}
+@media screen and (max-width: 930px) {
+  #splash-screen .splash-content .moving-splash-right{
+    right: 14%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #splash-screen .splash-content .moving-splash-right{
+    right: 20%;
+  }
+}
+@media screen and (max-width: 360px) {
+  #splash-screen .splash-content .moving-splash-right{
+    right: 25%;
+  }
+}
 #splash-screen .splash-content .moving-splash-left .rose-left{
   position: absolute;
   bottom: -5%;
   transform: rotate(-45deg);
+}
+#splash-screen .splash-content .moving-splash-right .rose-right{
+  position: absolute;
+  bottom: -5%;
+  transform: rotate(45deg);
 }
 #splash-screen .splash-content .moving-splash-left .wheat-left{
   position: absolute;
@@ -2497,6 +2556,18 @@ form label {
   bottom: 15%;
   left: 44px;
   transform: rotate(100deg);
+}
+#splash-screen .splash-content .moving-splash-right .wheat-right{
+  position: absolute;
+  bottom: 27%;
+  right: -78px;
+  /* transform: rotate(-10deg); */
+}
+#splash-screen .splash-content .moving-splash-right .daunan{
+  position: absolute;
+  bottom: 0%;
+  right: -35px;
+  /* transform: rotate(-10deg); */
 }
 #splash-screen .splash-content .moving-splash-left .kuncup1{
   position: absolute;
@@ -2522,6 +2593,28 @@ form label {
   left: 150px;
   transform: rotate(70deg);
 }
+#splash-screen .splash-content .moving-splash-right .kuncup1{
+  position: absolute;
+  top: 53%;
+  right: -100px;
+  transform: rotate(-10deg);
+}
+#splash-screen .splash-content .moving-splash-right .kuncup2{
+  position: absolute;
+  bottom: 24%;
+  right: -55px;
+  transform: rotate(-45deg);
+}
+#splash-screen .splash-content .moving-splash-right .kuncup3{
+  position: absolute;
+  bottom: 9%;
+  right: -24px;
+  transform: rotate(-40deg);
+}
+#splash-screen .splash-content .moving-splash-right .wheat-right img{
+  width: 40px;
+  height: 80px; 
+}
 #splash-screen .splash-content .moving-splash-left .wheat-left img,
 #splash-screen .splash-content .moving-splash-left .wheat-left-down img{
   width: 40px;
@@ -2535,6 +2628,231 @@ form label {
   width: 25px;
   height: 50px;
 }
+#splash-screen .splash-content .moving-splash-right .kuncup1 img,
+#splash-screen .splash-content .moving-splash-right .kuncup3 img{
+  width: 22px;
+  height: 44px;
+}
+#splash-screen .splash-content .moving-splash-right .kuncup2 img{
+  width: 18px;
+  height: 36px;
+}
+
+#fh5co-header .overlay .moving-splash-left{
+  position: absolute;
+  top: 60%;
+  bottom: 0%;
+  left: 5%;
+  z-index:10;
+}
+#fh5co-header .overlay .moving-splash-right{
+  position: absolute;
+  top: 60%;
+  bottom: 0%;
+  right: 10%;
+  z-index:10;
+}
+@media screen and (max-width: 930px) {
+  #fh5co-header .overlay .moving-splash-right{
+    right: 14%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #fh5co-header .overlay .moving-splash-right{
+    right: 20%;
+    top: 40%;
+    bottom: 5%;
+  }
+  #fh5co-header .overlay .moving-splash-left{
+    top: 40%;
+    bottom: 5%;
+  }
+}
+@media screen and (max-width: 360px) {
+  #fh5co-header .overlay .moving-splash-right{
+    right: 25%;
+  }
+}
+#fh5co-header .overlay .moving-splash-left .rose-left{
+  position: absolute;
+  bottom: -5%;
+  transform: rotate(-45deg);
+}
+#fh5co-header .overlay .moving-splash-right .rose-right{
+  position: absolute;
+  bottom: -5%;
+  transform: rotate(45deg);
+}
+#fh5co-header .overlay .moving-splash-left .wheat-left{
+  position: absolute;
+  bottom: 27%;
+  left: -25px;
+  transform: rotate(-10deg);
+}
+#fh5co-header .overlay .moving-splash-left .wheat-left-down{
+  position: absolute;
+  bottom: -20%;
+  left: 80px;
+  transform: rotate(70deg);
+}
+#fh5co-header .overlay .moving-splash-left .mini-wheat{
+  position: absolute;
+  bottom: 15%;
+  left: 44px;
+  transform: rotate(100deg);
+}
+#fh5co-header .overlay .moving-splash-right .wheat-right{
+  position: absolute;
+  bottom: 27%;
+  right: -78px;
+  /* transform: rotate(-10deg); */
+}
+#fh5co-header .overlay .moving-splash-right .daunan{
+  position: absolute;
+  bottom: 0%;
+  right: -35px;
+  /* transform: rotate(-10deg); */
+}
+#fh5co-header .overlay .moving-splash-left .kuncup1{
+  position: absolute;
+  top: 22%;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+#fh5co-header .overlay .moving-splash-left .kuncup2{
+  position: absolute;
+  bottom: 25%;
+  left: 10px;
+  transform: rotate(30deg);
+}
+#fh5co-header .overlay .moving-splash-left .kuncup3{
+  position: absolute;
+  bottom: 0%;
+  left: 60px;
+  transform: rotate(20deg);
+}
+#fh5co-header .overlay .moving-splash-left .kuncup4{
+  position: absolute;
+  bottom: -10%;
+  left: 150px;
+  transform: rotate(70deg);
+}
+#fh5co-header .overlay .moving-splash-right .kuncup1{
+  position: absolute;
+  top: 53%;
+  right: -100px;
+  transform: rotate(-10deg);
+}
+#fh5co-header .overlay .moving-splash-right .kuncup2{
+  position: absolute;
+  bottom: 24%;
+  right: -55px;
+  transform: rotate(-45deg);
+}
+#fh5co-header .overlay .moving-splash-right .kuncup3{
+  position: absolute;
+  bottom: 9%;
+  right: -24px;
+  transform: rotate(-40deg);
+}
+#fh5co-header .overlay .moving-splash-right .wheat-right img{
+  width: 40px;
+  height: 80px; 
+}
+#fh5co-header .overlay .moving-splash-left .wheat-left img,
+#fh5co-header .overlay .moving-splash-left .wheat-left-down img{
+  width: 40px;
+  height: 100px; 
+}
+#fh5co-header .overlay .moving-splash-left .mini-wheat img,
+#fh5co-header .overlay .moving-splash-left .kuncup1 img,
+#fh5co-header .overlay .moving-splash-left .kuncup2 img,
+#fh5co-header .overlay .moving-splash-left .kuncup3 img,
+#fh5co-header .overlay .moving-splash-left .kuncup4 img{
+  width: 25px;
+  height: 50px;
+}
+#fh5co-header .overlay .moving-splash-right .kuncup1 img,
+#fh5co-header .overlay .moving-splash-right .kuncup3 img{
+  width: 22px;
+  height: 44px;
+}
+#fh5co-header .overlay .moving-splash-right .kuncup2 img{
+  width: 18px;
+  height: 36px;
+}
+
+#fh5co-end .overlay .end-left{
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  left: 5%;
+  z-index:10;
+}
+#fh5co-end .overlay .end-right{
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  right: 10%;
+  z-index:10;
+}
+#fh5co-end .overlay .end-left .moving-rose-end-left{
+  position: absolute;
+  left: -40px;
+  transform: rotate(170deg);
+}
+#fh5co-end .overlay .end-left .wheat-left{
+  position: absolute;
+  left: -5px;
+  top: 14%;
+  transform: rotate(180deg);
+}
+#fh5co-end .overlay .end-left .wheat-left img{
+  width: 35px;
+  height: 80px;
+}
+#fh5co-end .overlay .end-left .daunan{
+  position: absolute;
+  left: 32px;
+  top: 6%;
+  transform: rotate(190deg);
+}
+#fh5co-end .overlay .end-right .moving-rose-end-right{
+  position: absolute;
+  right: -40px;
+  transform: rotate(160deg);
+}
+#fh5co-end .overlay .end-right .wheat1{
+  position: absolute;
+  right: 43px;
+  top: 0;
+  transform: rotate(-140deg);
+}
+#fh5co-end .overlay .end-right .wheat1 img{
+  width: 70px;
+  height: 70px;
+}
+#fh5co-end .overlay .end-right .wheat2{
+  position: absolute;
+  right: 24px;
+  top: 10%;
+  transform: rotate(-70deg);
+}
+#fh5co-end .overlay .end-right .wheat2 img{
+  width: 40px;
+  height: 50px;
+}
+#fh5co-end .overlay .end-right .wheat3{
+  position: absolute;
+  /* right: 24px; */
+  top: 15%;
+  transform: rotate(160deg);
+}
+#fh5co-end .overlay .end-right .wheat3 img{
+  width: 50px;
+  height: 100px;
+}
+
 .moving-image-groom {
   display: flex;
   flex-direction: column;
@@ -2567,16 +2885,16 @@ form label {
 .moving-rose-story-left {
   position: absolute;
   bottom: 22%;
-  left: -1%;
+  left: -5%;
   height: 250px;
-  z-index: -1;
+  z-index: 1;
 }
 .moving-leaf-story-left {
   position: absolute;
   bottom: 32%;
   left: -4%;
   height: 250px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .moving-image-bride {
@@ -2614,7 +2932,7 @@ form label {
   bottom: -10%;
   right: -4%;
   height: 250px;
-  z-index: -1;
+  z-index: 1;
   transform: rotate(10deg);
 }
 .moving-leaf-story-right {
@@ -2622,7 +2940,7 @@ form label {
   bottom: 10%;
   right: 2%;
   height: 250px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .moving-image-top-left {
@@ -2646,28 +2964,28 @@ form label {
 .moving-image-r {
   /* width: 150px; */
   animation: rotateImage5 2s ease-in-out infinite alternate;
-  opacity: 0.8;
+  opacity: 1;
   margin-top: -100px;
 }
 .moving-image-b {
   /* width: 150px; */
   animation: rotateImage30 2s ease-in-out infinite alternate;
   /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
-  opacity: 0.8;
+  opacity: 1;
   /* margin-top: -100px; */
 }
 .moving-image-c {
   /* width: 150px; */
-  animation: rotateImage10 3s ease-in-out infinite alternate;
+  animation: rotateImage10 2s ease-in-out infinite alternate;
   /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
-  opacity: 0.8;
+  opacity: 1;
   /* margin-top: -100px; */
 }
 .moving-image-d {
   /* width: 150px; */
   animation: rotateImage15 1s ease-in-out infinite alternate;
   /* animation: rotateImage 2s ease-in-out infinite alternate, blinkImage 8s infinite; */
-  opacity: 0.8;
+  opacity: 1;
   /* margin-top: -100px; */
 }
 
@@ -2767,7 +3085,6 @@ form label {
     flex-direction: column;
     position: absolute;
     height: 170px;
-    top: 385px;
     right: 20%;
     z-index: 10;
   }
@@ -2794,14 +3111,14 @@ form label {
   .moving-image-b {
     /* width: 150px; */
     animation: rotateImage30 2s ease-in-out infinite alternate;
-    opacity: 0.8;
+    opacity: 1;
     /* margin-top: -100px; */
   }
 
   .moving-image-r {
     /* width: 150px; */
     animation: rotateImage5 2s ease-in-out infinite alternate;
-    opacity: 0.8;
+    opacity: 1;
     /* margin-top: -100px; */
   }
 }
@@ -2855,14 +3172,14 @@ form label {
   }
 }
 /* animasi fadein */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0.9;
   }
   to {
     opacity: 1;
   }
-}
+} */
 
 @keyframes blinkImage {
   0%,
