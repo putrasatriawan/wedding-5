@@ -236,6 +236,14 @@
 			}
 
 		});
+		$('#toggleGiftButton').on('click', function() {
+			$('#gift-info').slideToggle(300);
+			if ($('#gift-info').is(':visible')) {
+				$(this).html('<i class="fa-solid fa-gift"></i> Kirim Hadiah');
+			} else {
+				$(this).html('<i class="fa-solid fa-gift"></i> Kirim Hadiah');
+			}
+		});
 	
 	};
 

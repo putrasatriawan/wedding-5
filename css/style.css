@@ -373,12 +373,12 @@ figure {
 }
 
 #fh5co-counter,
-#fh5co-event,
-#fh5co-gift {
+#fh5co-event {
   height: 1000px;
   float: left;
 }
-#fh5co-end {
+#fh5co-end,
+#fh5co-gift{
   height: 100%;
   padding: 100px 2%;
   float: left;
@@ -386,10 +386,14 @@ figure {
 #fh5co-counter .display-t,
 #fh5co-counter .display-tc,
 #fh5co-event .display-t,
-#fh5co-event .display-tc,
+#fh5co-event .display-tc{
+  height: 700px;
+  display: table;
+  width: 100%;
+}
 #fh5co-gift .display-t,
 #fh5co-gift .display-tc {
-  height: 700px;
+  height: 100%;
   display: table;
   width: 100%;
 }
@@ -2793,8 +2797,26 @@ form label {
   position: absolute;
   top: 5%;
   bottom: 0%;
-  right: 10%;
+  right: 5%;
   z-index:10;
+}
+
+#fh5co-end .overlay .bottom-left{
+  position: absolute;
+  left: 5%;
+  bottom: 2%;
+  transform: rotate(180deg);
+}
+#fh5co-end .overlay .bottom-right{
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 480px) {
+  #fh5co-end .overlay .end-right{
+  right: 10%;
+  }
 }
 #fh5co-end .overlay .end-left .moving-rose-end-left{
   position: absolute;
@@ -2816,6 +2838,51 @@ form label {
   left: 32px;
   top: 6%;
   transform: rotate(190deg);
+}
+#fh5co-end .overlay .end-left .kuncup1{
+  position: absolute;
+  left: 45px;
+  top: 8%;
+  transform: rotate(150deg);
+}
+#fh5co-end .overlay .end-left .kuncup2{
+  position: absolute;
+  left: 18px;
+  top: 15%;
+  transform: rotate(150deg);
+}
+#fh5co-end .overlay .end-left .kuncup3{
+  position: absolute;
+  left: -17px;
+  top: 15%;
+  transform: rotate(180deg);
+}
+#fh5co-end .overlay .end-left .kuncup2 img{
+  width: 14px;
+  height: 35px;
+}
+#fh5co-end .overlay .end-left .kuncup1 img,
+#fh5co-end .overlay .end-left .kuncup3 img{
+  width: 17px;
+  height: 50px;
+}
+#fh5co-end .overlay .end-right .kuncup1{
+  position: absolute;
+  right: 120px;
+  top: 0%;
+  transform: rotate(-140deg);
+}
+#fh5co-end .overlay .end-right .kuncup2{
+  position: absolute;
+  right: -18px;
+  top: 15%;
+  transform: rotate(170deg);
+}
+#fh5co-end .overlay .end-right .kuncup3{
+  position: absolute;
+  right: -40px;
+  top: 14%;
+  transform: rotate(150deg);
 }
 #fh5co-end .overlay .end-right .moving-rose-end-right{
   position: absolute;
@@ -2844,7 +2911,7 @@ form label {
 }
 #fh5co-end .overlay .end-right .wheat3{
   position: absolute;
-  /* right: 24px; */
+  right: -50px;
   top: 15%;
   transform: rotate(160deg);
 }
@@ -3245,4 +3312,20 @@ form label {
 .menu-toggle.active {
   opacity: 1;
   visibility: visible;
+}
+
+.button-gift{
+  background: #1c2536;
+  color: #ffffff;
+  font-family: "Poppins", Arial, serif;
+  padding: 5px 20px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.button-gift i{
+  margin-right: 10px;
 }
