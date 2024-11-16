@@ -1327,7 +1327,6 @@ form label {
   #fh5co-testimonial,
   #fh5co-services,
   #fh5co-started,
-  #fh5co-footer,
   #fh5co-event,
   #fh5co-gift,
   #fh5co-couple-story,
@@ -1463,6 +1462,9 @@ form label {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.instagram i{
+  color: white;
 }
 .couple-half .groom {
   float: right;
@@ -1702,7 +1704,7 @@ form label {
 #fh5co-started {
   position: relative;
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 70px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-started {
@@ -1778,6 +1780,11 @@ form label {
 }
 #fh5co-started .fh5co-heading {
   margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  #fh5co-started .fh5co-heading {
+    margin-top: 200px;
+  }
 }
 #fh5co-started .fh5co-heading h2 {
   margin-bottom: 0;
@@ -2349,10 +2356,11 @@ form label {
 
 #fh5co-quote {
   position: relative;
-  background: url("../images/mosque.jpg") no-repeat center center;
-  background-size: cover; /* Ensures the image covers the entire container */
-  min-height: 100vh; /* Full viewport height */
+  background: #1c2536;
+  /* background-size: cover; Ensures the image covers the entire container */
+  /* min-height: 100vh; Full viewport height */
   display: flex;
+  margin-top: -9px;
   align-items: center; /* Center the content vertically */
 }
 
@@ -2362,11 +2370,16 @@ form label {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust overlay opacity as needed */
+  /* background: rgba(0, 0, 0, 0.5); Adjust overlay opacity as needed */
 }
 
 #fh5co-quote .fh5co-heading h2 {
   color: #fff;
+}
+
+#fh5co-quote h4{
+  color: white;
+  font-size: 12px;
 }
 .blur-box {
   background: rgba(255, 255, 255, 0.2);
@@ -2640,6 +2653,143 @@ form label {
 #splash-screen .splash-content .moving-splash-right .kuncup2 img{
   width: 18px;
   height: 36px;
+}
+
+#fh5co-gift .overlay .amplop-left{
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  left: 5%;
+  z-index:10;
+}
+#fh5co-gift .overlay .amplop-right{
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  right: 5%;
+  z-index:10;
+}
+
+#fh5co-gift .overlay .amplop-left .middle-rose1{
+  position: absolute;
+  left: 85px;
+  top: 11%;
+  /* transform: rotate(130deg); */
+}
+#fh5co-gift .overlay .amplop-right .middle-rose2{
+  position: absolute;
+  right: 85px;
+  top: 11%;
+  /* transform: rotate(130deg); */
+}
+#fh5co-gift .overlay .amplop-left .kuncup1{
+  position: absolute;
+  left: 110px;
+  top: 0%;
+  transform: rotate(130deg);
+}
+#fh5co-gift .overlay .amplop-left .kuncup2{
+  position: absolute;
+  left: -18px;
+  top: 26%;
+  transform: rotate(170deg);
+}
+#fh5co-gift .overlay .amplop-left .kuncup3{
+  position: absolute;
+  left: -40px;
+  top: 25%;
+  transform: rotate(150deg);
+}
+#fh5co-gift .overlay .amplop-left .moving-rose-end-left{
+  position: absolute;
+  left: -40px;
+  transform: rotate(155deg);
+  top: 0;
+}
+#fh5co-gift .overlay .amplop-left .wheat1{
+  position: absolute;
+  left: 43px;
+  top: 0;
+  transform: rotate(130deg);
+}
+#fh5co-gift .overlay .amplop-left .wheat1 img{
+  width: 60px;
+  height: 70px;
+}
+#fh5co-gift .overlay .amplop-left .wheat2{
+  position: absolute;
+  left: 24px;
+  top: 18%;
+  transform: rotate(60deg);
+}
+#fh5co-gift .overlay .amplop-left .wheat2 img{
+  width: 40px;
+  height: 50px;
+}
+#fh5co-gift .overlay .amplop-left .wheat3{
+  position: absolute;
+  left: -50px;
+  top: 26%;
+  transform: rotate(190deg);
+}
+#fh5co-gift .overlay .amplop-left .wheat3 img{
+  width: 50px;
+  height: 100px;
+}
+
+#fh5co-gift .overlay .amplop-right .kuncup1{
+  position: absolute;
+  right: 110px;
+  top: 0%;
+  transform: rotate(-140deg);
+}
+#fh5co-gift .overlay .amplop-right .kuncup2{
+  position: absolute;
+  right: -18px;
+  top: 26%;
+  transform: rotate(170deg);
+}
+#fh5co-gift .overlay .amplop-right .kuncup3{
+  position: absolute;
+  right: -40px;
+  top: 25%;
+  transform: rotate(150deg);
+}
+#fh5co-gift .overlay .amplop-right .moving-rose-end-right{
+  position: absolute;
+  right: -40px;
+  transform: rotate(160deg);
+  top: 0;
+}
+#fh5co-gift .overlay .amplop-right .wheat1{
+  position: absolute;
+  right: 43px;
+  top: 0;
+  transform: rotate(-140deg);
+}
+#fh5co-gift .overlay .amplop-right .wheat1 img{
+  width: 60px;
+  height: 70px;
+}
+#fh5co-gift .overlay .amplop-right .wheat2{
+  position: absolute;
+  right: 24px;
+  top: 18%;
+  transform: rotate(-70deg);
+}
+#fh5co-gift .overlay .amplop-right .wheat2 img{
+  width: 40px;
+  height: 50px;
+}
+#fh5co-gift .overlay .amplop-right .wheat3{
+  position: absolute;
+  right: -50px;
+  top: 26%;
+  transform: rotate(160deg);
+}
+#fh5co-gift .overlay .amplop-right .wheat3 img{
+  width: 50px;
+  height: 100px;
 }
 
 #fh5co-header .overlay .moving-splash-left{
@@ -2937,8 +3087,81 @@ form label {
   left: 0;
   height: 160px;
   z-index: -1;
+  opacity: 0.8;
 }
 
+.moving-image-com2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  height: 160px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.moving-rose-com {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -120px;
+  left: -6%;
+  height: 160px;
+  z-index: -1;
+  opacity: 0.8;
+  transform: rotate(-40deg);
+  width: 70px;
+}
+
+.moving-rose-com2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -170px;
+  right: -10%;
+  height: 160px;
+  z-index: -1;
+  opacity: 0.8;
+  transform: rotate(-40deg);
+  width: 70px;
+}
+
+@media screen and (max-width: 480px) {
+  .moving-image-com {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 170px;
+    top: 100px;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  .moving-image-com2 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 170px;
+    top: -20px;
+    right: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  .moving-rose-com {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -120px;
+    left: 0;
+    height: 160px;
+    z-index: -1;
+    opacity: 0.8;
+    transform: rotate(-40deg);
+    width: 70px;
+  }
+}
 .moving-rose-groom {
   display: flex;
   flex-direction: column;
@@ -2972,16 +3195,6 @@ form label {
   right: 330px;
   height: 160px;
   z-index: 10;
-}
-
-.moving-image-com2 {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: -50px;
-  right: 0;
-  height: 160px;
-  z-index: -1;
 }
 
 .moving-rose-bride {
@@ -3127,16 +3340,6 @@ form label {
     left: 20%;
     z-index: 10;
   }
-
-  .moving-image-com {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    height: 170px;
-    top: 100px;
-    left: 0;
-    z-index: -1;
-  }
   .moving-rose-groom {
     display: flex;
     flex-direction: column;
@@ -3154,16 +3357,6 @@ form label {
     height: 170px;
     right: 20%;
     z-index: 10;
-  }
-
-  .moving-image-com2 {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    height: 170px;
-    top: -20px;
-    right: 0;
-    z-index: -1;
   }
 
   .moving-rose-bride {
@@ -3328,4 +3521,14 @@ form label {
 }
 .button-gift i{
   margin-right: 10px;
+}
+
+#fh5co-quote .overlay .quote-left{
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+}
+#fh5co-quote .overlay .quote-right{
+  position: absolute;
+  right: 2%;
 }

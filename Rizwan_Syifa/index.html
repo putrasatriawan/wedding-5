@@ -332,7 +332,7 @@
 							<div class="desc-groom">
 								<h3>Rizwan Barokah</h3>
 								<p class="instagram"><a href="https://www.instagram.com/rizwan.barokah/?utm_source=ig_web_button_share_sheet"><i class="fa-brands fa-instagram"></i></a></p>
-								<p>Putra pertama Bapak Rohman &amp; Ibu Suryati</p>
+								<p>Putra keempat Bapak Alm. Rohman &amp; Ibu Suryati</p>
 							</div>
 						</div>
 						<p class="heart text-center"><i class="icon-heart2"></i></p>
@@ -352,7 +352,7 @@
 							<div class="desc-bride">
 								<h3>Syifa Andina Putri</h3>
 								<p class="instagram"><a href="https://www.instagram.com/cllmecipa/?utm_source=ig_web_button_share_sheet"><i class="fa-brands fa-instagram"></i></a></p>
-								<p>Putri kedua Bapak Herry Kusbiantoro &amp; Ibu Siti Rohamah</p>
+								<p>Putri pertama Bapak Alm. Herry Kusbiantoro &amp; Ibu Siti Rohamah</p>
 							</div>
 						</div>
 					</div>
@@ -611,8 +611,8 @@
 								</li>
 								<li class="one-third animate-box"
 									data-animate-effect="fadeIn"
-									style="background-image: url(images/gallery-6.jpg); ">
-									<a href="images/gallery-6.jpg">
+									style="background-image: url(images/couple-1.jpg); ">
+									<a href="images/couple-1.jpg">
 									</a>
 								</li>
 							</ul>
@@ -761,7 +761,7 @@
 												<h2 style="text-align: center;">Kirim Hadiah</h2>
 												<p>Nama Penerima : Rizwan Barokah</p>
 												<p>No. HP : +62 851-5804-6624</p>
-												<p>Jl Dago</p>
+												<p>Jl Dago Barat No.41 161c, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135</p>
 											</div>
 										</div>
 									</div>
@@ -1033,16 +1033,15 @@
 
 					<div class="row copyright">
 						<div class="col-md-12 text-center animate-box">
-							<h2>Made with <strong>love</strong> by <strong>Wedding Zone</strong></h2>
+							<h2>Made with <strong>love</strong> by <strong>Zone Miracle</strong></h2>
 							<p>Cari tahu lebih lanjut tentang kami melalui :</p>
 							<ul class="fh5co-social-icons">
-								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+								<li><a href="https://www.instagram.com/zonemiracle_?igsh=MXFqcmc1MjlkenNyZw=="><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://wa.me/6281563939538"><i class="fa fa-whatsapp"></i></a></li>
 							</ul>
 							<p>
 								<small class="block">Alamat :<br>
-									Jl. Terusan Sekolah No.1-2, Cicaheum, Kec. Kiaracondong, Kota Bandung, Jawa Barat
-									40282 </small>
+									Komplek Lingga Jaya No 64, Jatinangor Sumedang</small>
 							</p>
 							<p>
 								<!-- <ul class="fh5co-social-icons">
@@ -1148,23 +1147,18 @@
 				document.getElementById('pause-icon').style.display = 'none';
 			}
 		});
-		var targetDate = new Date('2025-01-25T09:00:00');
+		var targetDate = new Date('2025-01-25T09:00:00'); 
 
-		var d = new Date(targetDate.getTime());
-
-		// default example
 		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate()
-		});
-
-		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
+			year: targetDate.getFullYear(),
+			month: targetDate.getMonth() + 1,
+			day: targetDate.getDate(),
+			hours: targetDate.getHours(),
+			minutes: targetDate.getMinutes(),
+			enableUtc: false,
+			onEnd: function() {
+				alert("Countdown finished!");
+			}
 		});
 	</script>
 	<script>

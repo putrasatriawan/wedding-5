@@ -1327,7 +1327,6 @@ form label {
   #fh5co-testimonial,
   #fh5co-services,
   #fh5co-started,
-  #fh5co-footer,
   #fh5co-event,
   #fh5co-gift,
   #fh5co-couple-story,
@@ -2361,7 +2360,7 @@ form label {
   /* background-size: cover; Ensures the image covers the entire container */
   /* min-height: 100vh; Full viewport height */
   display: flex;
-  margin-top: -8px;
+  margin-top: -9px;
   align-items: center; /* Center the content vertically */
 }
 
